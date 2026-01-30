@@ -289,14 +289,14 @@ with tab_analytics:
                             title="Latence vs Échelle (Bits)", 
                             template="plotly_dark",
                             color_discrete_sequence=px.colors.qualitative.Safe)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
         
         with c2:
             st.markdown("### Statistiques moyennes")
             st.write(df.groupby("Méthode")["Durée (ms)"].mean().rename("Latence moy. (ms)"))
             
         st.markdown("### Historique d'analyse")
-        st.dataframe(df, use_container_width=True)
+        st.dataframe(df, width='stretch')
     else:
         st.info("Lancez des tests pour voir les analyses de performance.")
 
